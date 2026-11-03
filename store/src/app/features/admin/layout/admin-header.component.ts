@@ -5,6 +5,8 @@ import { AsyncPipe, DatePipe, UpperCasePipe } from '@angular/common';
 import { AuthState } from '../../../core/store/auth.reducer';
 import { selectCurrentUser } from '../../../core/store/auth.selectors';
 
+import { ThemeService } from '../../../core/service/theme.service';
+
 @Component({
   selector: 'app-admin-header',
   standalone: true,
@@ -15,11 +17,20 @@ import { selectCurrentUser } from '../../../core/store/auth.selectors';
 export class AdminHeaderComponent {
   private readonly store = inject(Store<{ auth: AuthState }>);
   private readonly router = inject(Router);
+  readonly themeService = inject(ThemeService);
 
   @Output() toggleSidebar = new EventEmitter<void>();
 
   readonly currentUser$ = this.store.select(selectCurrentUser);
   readonly today = new Date();
+
+  get isDark(): boolean {
+    return this.themeService.isDark;
+  }
+
+  toggleTheme(): void {
+    this.themeService.toggleTheme();
+  }
 
   getPageTitle(): string {
     const url = this.router.url;

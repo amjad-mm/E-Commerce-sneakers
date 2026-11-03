@@ -569,6 +569,48 @@
   font-weight: 800;
 }
 
+/* ===== Theme Toggle Button ===== */
+.sr-theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 9px;
+  background: #fff;
+  border: 1px solid #111;
+  color: #111;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 #111;
+  transition: all 0.15s ease;
+  line-height: 1;
+}
+
+.sr-theme-toggle-btn:hover {
+  background: #111;
+  color: #d9f13d;
+  box-shadow: 3px 3px 0 #111;
+  transform: translate(-1px, -1px);
+}
+
+.sr-theme-toggle-btn .sr-theme-icon {
+  width: 13px;
+  height: 13px;
+  display: block;
+}
+
+.sr-theme-toggle-btn--mobile {
+  padding: 6px 8px;
+  box-shadow: none;
+}
+
+.sr-drawer-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 /* ===== Responsive Breakpoints ===== */
 
 @media (min-width: 992px) {

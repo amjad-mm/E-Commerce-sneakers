@@ -24,6 +24,8 @@ import { NotificationService } from './core/service/notification.service';
 import { ProductViewComponent } from './features/product-view/product-view.component';
 import { CheckoutComponent } from './features/checkout/checkout.component';
 import { OrderSuccessComponent } from './features/order-success/order-success.component';
+import { ThemeService } from './core/service/theme.service';
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -40,7 +42,8 @@ export class AppComponent {
     private readonly cartService: CartService,
     private readonly wishlistService: WishlistService,
     private readonly authService: AuthService,
-    private readonly notificationService: NotificationService
+    private readonly notificationService: NotificationService,
+    private readonly themeService: ThemeService
   ) {
     this.restoreUserSession();
     this.restoreOrders();

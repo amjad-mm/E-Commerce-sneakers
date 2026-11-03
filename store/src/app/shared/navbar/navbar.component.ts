@@ -11,6 +11,7 @@ import { WishlistState } from '../../core/store/wishlist.reducer';
 import { selectWishlistCount } from '../../core/store/wishlist.selectors';
 import { CartService } from '../../core/service/cart.service';
 import { WishlistService } from '../../core/service/wishlist.service';
+import { ThemeService } from '../../core/service/theme.service';
 
 @Component({
   selector: 'app-navbar',
@@ -24,12 +25,21 @@ export class NavbarComponent {
   private readonly cartService = inject(CartService);
   private readonly wishlistService = inject(WishlistService);
   private readonly router = inject(Router);
+  readonly themeService = inject(ThemeService);
 
   readonly cartCount$ = this.store.select(selectCartItemCount);
   readonly currentUser$ = this.store.select(selectCurrentUser);
   readonly wishlistCount$ = this.store.select(selectWishlistCount);
 
   isMobileMenuOpen = false;
+
+  get isDark(): boolean {
+    return this.themeService.isDark;
+  }
+
+  toggleTheme(): void {
+    this.themeService.toggleTheme();
+  }
 
   toggleMobileMenu(): void {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;

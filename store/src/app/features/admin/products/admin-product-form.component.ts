@@ -5,6 +5,7 @@ import { UpperCasePipe, CurrencyPipe } from '@angular/common';
 import { ProductService } from '../../../core/service/product.service';
 import { Products } from '../../../core/models/product.model';
 import { NotificationService } from '../../../core/service/notification.service';
+import { ThemeService } from '../../../core/service/theme.service';
 
 @Component({
   selector: 'app-admin-product-form',

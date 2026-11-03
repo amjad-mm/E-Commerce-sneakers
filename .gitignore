@@ -33,3 +33,7 @@ bazel-out/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Agent skills
+skills-lock.json
+

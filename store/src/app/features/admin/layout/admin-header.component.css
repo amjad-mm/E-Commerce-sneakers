@@ -159,6 +159,38 @@
   font-size: 12px;
 }
 
+/* Theme Toggle Button */
+.sr-theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: #111111;
+  border: 1px solid #333333;
+  color: #d9f13d;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.sr-theme-toggle-btn:hover {
+  background: #d9f13d;
+  color: #000000;
+  border-color: #d9f13d;
+}
+
+.sr-theme-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.sr-theme-label {
+  font-size: 10px;
+}
+
 /* Responsive Media Queries */
 @media (max-width: 900px) {
   .sr-mobile-menu-btn {
