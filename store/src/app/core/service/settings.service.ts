@@ -2,13 +2,14 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, catchError, map, of, tap } from 'rxjs';
 import { AppSettings, DEFAULT_APP_SETTINGS } from '../models/settings.model';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SettingsService {
   private readonly http = inject(HttpClient);
-  private readonly apiUrl = 'http://localhost:3000/settings';
+  private readonly apiUrl = `${environment.apiUrl}/settings`;
 
   private readonly settingsSubject = new BehaviorSubject<AppSettings>(DEFAULT_APP_SETTINGS);
   readonly settings$ = this.settingsSubject.asObservable();

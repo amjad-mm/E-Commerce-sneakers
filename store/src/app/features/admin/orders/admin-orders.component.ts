@@ -76,7 +76,7 @@ export class AdminOrdersComponent implements OnInit {
       catchError((err) => {
         console.error('Failed to load orders for admin:', err);
         this.hasError = true;
-        this.errorMessage = 'Could not retrieve orders from json-server. Please verify json-server is active on port 3000.';
+        this.errorMessage = 'Could not retrieve orders from backend service. Please verify the API is active.';
         return of([]);
       })
     ).subscribe({

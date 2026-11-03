@@ -2,6 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, catchError, map, of, throwError } from 'rxjs';
 import { Products } from '../models/product.model';
+import { environment } from '../../../environments/environment';
 
 const FALLBACK_CATALOG: Products[] = [
   {
@@ -103,7 +104,7 @@ const FALLBACK_CATALOG: Products[] = [
 })
 export class ProductService {
   private readonly http = inject(HttpClient);
-  private readonly apiUrl = 'http://localhost:3000/products';
+  private readonly apiUrl = `${environment.apiUrl}/products`;
 
   getProducts(): Observable<Products[]> {
     return this.http.get<Products[]>(this.apiUrl).pipe(

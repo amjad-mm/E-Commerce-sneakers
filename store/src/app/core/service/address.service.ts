@@ -2,13 +2,14 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, forkJoin, map, of, switchMap } from 'rxjs';
 import { Address } from '../models/address.model';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AddressService {
   private readonly http = inject(HttpClient);
-  private readonly apiUrl = 'http://localhost:3000/addresses';
+  private readonly apiUrl = `${environment.apiUrl}/addresses`;
 
   getAddresses(userEmail: string): Observable<Address[]> {
     if (!userEmail) {
